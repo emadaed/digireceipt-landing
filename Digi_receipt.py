@@ -187,3 +187,6 @@ if submitted:
     st.download_button("📥 Download PDF Receipt", buffer, file_name=f"{invoice_no}.pdf")
 
 # 📜 Show recent invoices
+st.subheader("📜 Recent Invoices")
+for r in get_invoices():
+    st.text(f"{r[1]} | {r[2]} | {r[3]} | Rs {r[4]:.2f}")
