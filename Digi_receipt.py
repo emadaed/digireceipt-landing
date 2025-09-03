@@ -118,10 +118,10 @@ if submitted:
         pdf.drawInlineImage(img, 40, y - img_height, width=img_width, height=img_height)
         y -= img_height + 10
 
-    pdf.setFont("Helvetica-Bold", 12)
+    pdf.setFont("Courier-Bold", 12)
     pdf.drawString(40, y, vendor_name.upper())
     y -= 15
-    pdf.setFont("Helvetica", 9)
+    pdf.setFont("Courier", 9)
     pdf.drawString(40, y, f"Address: {store_address}")
     pdf.drawString(300, y, f"Phone: {store_phone}")
     y -= 15
@@ -134,7 +134,7 @@ if submitted:
     pdf.drawString(300, y, f"Invoice #: {invoice_no}")
     y -= 25
 
-    pdf.setFont("Helvetica-Bold", 9)
+    pdf.setFont("Courier-Bold", 9)
     pdf.drawString(40, y, "Item Name")
     pdf.drawString(200, y, "Code")
     pdf.drawString(260, y, "Qty")
@@ -145,20 +145,20 @@ if submitted:
     pdf.line(40, y, 500, y)
     y -= 15
 
-    pdf.setFont("Helvetica", 9)
+    pdf.setFont("Courier", 9)
     for item in items:
         line_total = (item['price'] - item['discount']) * item['quantity']
         wrapped_name = pdf.beginText(40, y)
         wrapped_name.textLines(item['name'])
-        pdf.drawText(wrapped_name)
-        pdf.drawString(200, y, item['code'])
-        pdf.drawString(260, y, str(item['quantity']))
-        pdf.drawString(300, y, f"{item['price']:.2f}")
-        pdf.drawString(360, y, f"{item['discount']:.2f}")
-        pdf.drawString(420, y, f"{line_total:.2f}")
-        y -= 30
+        pdf.drawString(40, y, item['name'])  # Keep item name left-aligned
+        pdf.drawString(200, y, item['code'])  # Code can stay left-aligned
+        pdf.drawRightString(260, y, str(item['quantity']))
+        pdf.drawRightString(300, y, f"{item['price']:.2f}")
+        pdf.drawRightString(360, y, f"{item['discount']:.2f}")
+        pdf.drawRightString(420, y, f"{line_total:.2f}")
+        y -= 20
 
-    pdf.setFont("Helvetica-Bold", 9)
+    pdf.setFont("Courier-Bold", 9)
     pdf.drawString(40, y, f"Subtotal: {subtotal:.2f}")
     pdf.drawString(200, y, f"Sales Tax (18%): {tax_amount:.2f}")
     pdf.drawString(360, y, f"POS Fee: {pos_fee:.2f}")
@@ -166,7 +166,7 @@ if submitted:
     pdf.drawString(40, y, f"Grand Total: {grand_total:.2f}")
     pdf.drawString(300, y, f"Payment: {payment_method}")
     y -= 25
-    pdf.setFont("Helvetica", 9)
+    pdf.setFont("Courier", 9)
     pdf.drawString(40, y, f"Warranty: {warranty_note}")
     y -= 15
     pdf.drawString(40, y, footer_note)
@@ -190,3 +190,14 @@ if submitted:
 st.subheader("📜 Recent Invoices")
 for r in get_invoices():
     st.text(f"{r[1]} | {r[2]} | {r[3]} | Rs {r[4]:.2f}")
+
+st.download_button("📥 Download PDF Receipt", buffer, file_name=f"{invoice_no}.pdf")
+
+# 🔐 Owner-only Receipt History Viewer
+owner_code = st.text_input("🔐 Enter Owner Code to View History", type="password")
+if owner_code == "1234":
+    st.subheader("📜 Receipt History")
+    for r in get_invoices():
+        st.text(f"{r[1]} | {r[2]} | {r[3]} | Rs {r[4]:.2f}")
+else:
+    st.info("Receipt history is restricted to the owner.")
