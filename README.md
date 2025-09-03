@@ -14,6 +14,7 @@ Key Highlights:
 
 🔒 Built with empathy for trust, legitimacy, and **real-world impact.**
 
+**Click to Try now** https://digireceipt-landing-pk.streamlit.app/
 **Purpose: **
 
 To serve as the first touchpoint for users exploring DigiReceipt — whether they’re shopkeepers, freelancers, or community educators. This page reflects the product’s commitment to regulatory compliance, operational relief, and digital empowerment at large, But **Specially** for those with **no access to spread sheets**.
