@@ -2,35 +2,106 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>DigiReceipt — Free Urdu Invoice Generator for Microbusinesses</title>
-  <meta name="description" content="Create Urdu-friendly invoices and receipts online with DigiReceipt. Includes QR code, tax logic, warranty footer, and mobile-first PDF layout. Ideal for small shops, freelancers, and service providers in Pakistan.">
-  <meta name="keywords" content="online invoice generator, free invoice maker, DigiReceipt, Digi_receipt.py, receipt generator Pakistan, Urdu invoice, QR code invoice, invoice app Pakistan, invoice alternative to Zoho, QuickBooks, Invoice Ninja, PDF receipt, FBR compliant invoice, mobile receipt app, small printer invoice, POS invoice Pakistan">
-  <meta name="author" content="Muhammad Ahmad (TheOpsArchitect)">
-  <meta name="robots" content="index, follow">
-  <meta property="og:title" content="DigiReceipt — Urdu Invoice Generator for Microbusinesses">
-  <meta property="og:description" content="Generate PDF receipts with QR codes, tax logic, and warranty footers. Trusted by local shops and freelancers across Pakistan.">
-  <meta property="og:url" content="https://emadaed-digi-receipt-main.streamlit.app">
-  <meta property="og:type" content="website">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DigiReceipt – Simple Digital Receipts</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: #f9fafb;
+      color: #111827;
+      line-height: 1.6;
+    }
+    header {
+      text-align: center;
+      padding: 4rem 2rem;
+      background: linear-gradient(135deg, #2563eb, #1e40af);
+      color: white;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    header p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: auto;
+    }
+    .cta {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.75rem 1.5rem;
+      background: white;
+      color: #1e40af;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: 0.2s;
+    }
+    .cta:hover {
+      background: #e0e7ff;
+    }
+    section {
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 0 1.5rem;
+    }
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .feature {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #1f2937;
+      color: #9ca3af;
+    }
+    footer a {
+      color: #60a5fa;
+      text-decoration: none;
+    }
+  </style>
 </head>
-<body style="font-family: Arial, sans-serif; max-width: 700px; margin: auto; padding: 20px;">
-  <h1>🧾 Welcome to DigiReceipt</h1>
-  <p><strong>DigiReceipt</strong> is Pakistan’s trusted Urdu-friendly invoice generator for microbusinesses, freelancers, and service providers. Whether you run a shop, a warehouse, or a mobile business, DigiReceipt helps you create professional receipts with:</p>
-  <ul>
-    <li>✅ QR code for verification</li>
-    <li>✅ Tax logic and GST note</li>
-    <li>✅ Warranty footer</li>
-    <li>✅ Mobile-first PDF layout for small printers</li>
-    <li>✅ Urdu interface and bilingual support</li>
-    <li>✅ SQLite logging for audit-ready history</li>
-  </ul>
-  <p>Built by <strong>Muhammad Ahmad (TheOpsArchitect)</strong>, DigiReceipt is designed for real-world trust, compliance, and ease of use.</p>
-  <p><meta property="og:url" content="https://digireceipt-landing-pk.streamlit.app/"></p>
-  <hr>
-  <h2>🔍 Why DigiReceipt?</h2>
-  <p>Unlike global tools like Zoho, QuickBooks, or Invoice Ninja, DigiReceipt is built for local needs — with offline resilience, Urdu support, and small printer compatibility. It’s free, fast, and focused on empowering microbusinesses.</p>
-  <p>Search terms like <em>“online invoice maker Pakistan”</em>, <em>“free receipt generator”</em>, or <em>“QR code invoice tool”</em> will help customers find this page and reach your app.</p>
-  <hr>
-  <p style="font-size: 12px; color: gray;">Powered by DigiReceipt v1.3 — PDF + QR + SQLite Logging</p>
+<body>
+  <header>
+    <h1>🧾 DigiReceipt</h1>
+    <p>Create professional receipts instantly. Generate, download, and verify receipts with QR codes — fast, simple, and mobile-friendly.</p>
+    <a href="https://digireceipt-landing-pk.streamlit.app/" target="_blank" class="cta">🚀 Launch DigiReceipt</a>
+  </header>
+
+  <section>
+    <h2>✨ Features</h2>
+    <div class="features">
+      <div class="feature">
+        <h3>📄 Digital Receipts</h3>
+        <p>Quickly generate receipts with shop details, tax info, and payment methods.</p>
+      </div>
+      <div class="feature">
+        <h3>💾 PDF Download</h3>
+        <p>Download clean, professional receipts in PDF format for customers and records.</p>
+      </div>
+      <div class="feature">
+        <h3>🔍 QR Verification</h3>
+        <p>Each receipt includes a QR code for easy verification and record-keeping.</p>
+      </div>
+      <div class="feature">
+        <h3>🌐 Bilingual Support</h3>
+        <p>Receipts in English and Urdu for wider accessibility in Pakistan.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Made with ❤️ by DigiReceipt Team | <a href="https://github.com/emadaed/digireceipt-landing" target="_blank">GitHub Repo</a></p>
+  </footer>
 </body>
 </html>
