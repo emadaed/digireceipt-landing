@@ -1,5 +1,4 @@
 qrcode
 pillow
-requests
 streamlit
 reportlab
