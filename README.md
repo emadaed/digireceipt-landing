@@ -1,24 +1,74 @@
-# DigiReceipt Landing Page
+# 🧾 DigiReceipt – Free Online Invoice Generator
 
-A mobile-first, culturally resonant landing page for DigiReceipt — Pakistan’s trusted digital receipt generator for microbusinesses and freelancers. This repo hosts the public-facing interface to introduce DigiReceipt’s features, showcase compliance-ready receipts, and guide users toward adoption.
-Key Highlights:
+DigiReceipt is a **free online invoice generator** built with empathy for **freelancers, shopkeepers, and small businesses in Pakistan**.  
+It helps you create **professional PDF receipts** instantly, with support for **Urdu & English, FBR-style tax details, QR codes, and discounts**.
 
+---
 
-🧾 DigiReceipt – Create professional receipts instantly.
+## 🌐 Links
 
+- 🚀 **Launch DigiReceipt App**: [https://digireceipt-landing-pk.streamlit.app/](https://digireceipt-landing-pk.streamlit.app/)  
+- 🌍 **Landing Page**: [https://emadaed.github.io/digireceipt-landing/](https://emadaed.github.io/digireceipt-landing/)  
+- 📂 **GitHub Repo**: [https://github.com/emadaed/digireceipt-landing](https://github.com/emadaed/digireceipt-landing)  
 
-## 🔗 Links
-- 🌐 Landing Page: [DigiReceipt Landing](https://emadaed.github.io/digireceipt-landing/)
-  
-- 🚀 Streamlit App: [Launch DigiReceipt](https://digireceipt-landing-pk.streamlit.app/)
+---
 
 ## ✨ Features
 
-- Generate digital receipts with shop details & tax info
-- Download clean PDF receipts
-- QR code verification
-- Multi-language support (English + Urdu)
-- Free to use
+- 🏪 Add shop details, tax info, and your own logo  
+- 🧾 Generate **unique invoice numbers** automatically  
+- 🔔 Alerts for missing **price** or **quantity**  
+- 📊 Itemized receipts with discounts & totals  
+- 🖨️ Instant **PDF download** with clean formatting  
+- 📱 QR code for invoice verification  
+- 🇵🇰 **Supports Pakistan market** with FBR-style tax formats  
+- 💸 100% Free, no signup required  
 
-To serve as the first touchpoint for users exploring DigiReceipt — whether they’re shopkeepers, freelancers, or community educators.
-This page reflects the product’s commitment to regulatory compliance, operational relief, and digital empowerment at large.
+---
+
+## 🎯 Why DigiReceipt?
+
+- ✅ Designed for **Pakistani freelancers** who need legit invoices for clients  
+- ✅ Perfect for **shopkeepers** who want digital receipts without expensive POS software  
+- ✅ Lightweight, mobile-friendly, and works in your browser  
+- ✅ Made with ❤️ for local businesses  
+
+---
+
+## 📈 SEO Keywords
+
+*generate invoice online, free invoice generator, online invoice maker, make invoice online, free receipt maker, invoice template Pakistan, digital receipt app, FBR style invoice, Urdu invoice generator, freelance invoice generator, create receipt online, professional invoice free, online bill maker*
+
+---
+
+## 🛠️ Tech Stack
+
+- Python + Streamlit  
+- ReportLab (PDF generation)  
+- Pillow (image support)  
+- QRCode (for receipt verification)  
+- SQLite (for invoice history)  
+- GitHub Pages (landing page hosting)  
+- Streamlit Cloud (app hosting)  
+
+---
+
+## 🚀 Roadmap
+
+- 🔐 Export invoices to Google Drive  
+- 📧 Email invoices directly from the app  
+- 📊 Export all receipts as CSV for bookkeeping  
+- 🖼️ Sample Urdu invoice templates  
+
+---
+
+## 🤝 Contributing
+
+Contributions, feature requests, and suggestions are welcome!  
+Open an issue or submit a pull request on GitHub.
+
+---
+
+## 📜 License
+
+This project is open-source under the MIT License.
