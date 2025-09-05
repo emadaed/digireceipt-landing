@@ -11,7 +11,7 @@ import pandas as pd
 
 st.set_page_config(
     page_title="DigiReceipt",
-    page_icon="🧾",   # favicon in Streamlit tab
+    page_icon="🧾",
     layout="centered"
 )
 
@@ -54,10 +54,11 @@ def get_invoices(limit=10):
 def get_next_invoice_no():
     conn = sqlite3.connect("digireceipts.db")
     c = conn.cursor()
-    c.execute("SELECT COUNT(*) FROM invoices")
-    count = c.fetchone()[0]
+    c.execute("SELECT MAX(id) FROM invoices")
+    last_id = c.fetchone()[0]
     conn.close()
-    return f"INV-{datetime.today().strftime('%Y%m%d')}-{count + 1}"
+    next_id = 1 if last_id is None else last_id + 1
+    return f"INV-{datetime.today().strftime('%Y%m%d')}-{next_id}"
 
 init_db()
 
@@ -115,16 +116,20 @@ with st.form("invoice_form"):
             price = st.number_input(f"Item {i} Price", min_value=0.0, step=0.01, key=f"price_{i}")
             discount = st.number_input(f"Item {i} Discount", min_value=0.0, step=0.01, key=f"discount_{i}")
             quantity = st.number_input(f"Item {i} Quantity", min_value=0, step=1, key=f"qty_{i}")
-            if name and quantity > 0:
-                items.append({
-                    "name": name,
-                    "code": code,
-                    "price": price,
-                    "discount": discount,
-                    "quantity": quantity,
-                })
-            elif name and quantity == 0:
-                st.warning(f"⚠️ Quantity missing for item: {name}")
+
+            if name:
+                if quantity == 0:
+                    st.warning(f"⚠️ Quantity missing for item: {name}")
+                elif price == 0:
+                    st.warning(f"⚠️ Price missing for item: {name}")
+                else:
+                    items.append({
+                        "name": name,
+                        "code": code,
+                        "price": price,
+                        "discount": discount,
+                        "quantity": quantity,
+                    })
 
     submitted = st.form_submit_button("🧾 Generate Invoice")
 
