@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ultimate Guide to Python Operators</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f8fb;
+      color: #333;
+      margin: 40px;
+    }
+    h1, h2 {
+      color: #0056b3;
+    }
+    p, li {
+      font-size: 1.05em;
+      line-height: 1.6;
+    }
+    code {
+      background-color: #eef;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: Consolas, monospace;
+    }
+    .section {
+      margin-top: 30px;
+    }
+    .quiz {
+      background-color: #fff;
+      border: 1px solid #ccc;
+      padding: 20px;
+      margin-top: 30px;
+    }
+    .quiz h3 {
+      margin-bottom: 10px;
+    }
+    .quiz label {
+      display: block;
+      margin-bottom: 8px;
+    }
+    .result {
+      font-weight: bold;
+      margin-top: 15px;
+    }
+    .submit-btn {
+      margin-top: 20px;
+    }
+    .link-box a {
+      display: block;
+      margin-bottom: 8px;
+      color: #007acc;
+      text-decoration: none;
+    }
+    .link-box a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🐍 Ultimate Guide to Python Operators</h1>
+  <p>This guide covers all types of Python operators with real-life examples and an interactive quiz to test your understanding.</p>
+
+  <div class="section">
+    <h2>1. Arithmetic Operators</h2>
+    <ul>
+      <li><code>+</code> Addition: <code>3 + 2 = 5</code></li>
+      <li><code>-</code> Subtraction: <code>5 - 2 = 3</code></li>
+      <li><code>*</code> Multiplication: <code>4 * 2 = 8</code></li>
+      <li><code>/</code> Division: <code>10 / 2 = 5.0</code></li>
+      <li><code>%</code> Modulus: <code>10 % 3 = 1</code></li>
+      <li><code>**</code> Exponent: <code>2 ** 3 = 8</code></li>
+      <li><code>//</code> Floor Division: <code>10 // 3 = 3</code></li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>2. Comparison Operators</h2>
+    <ul>
+      <li><code>==</code> Equal to</li>
+      <li><code>!=</code> Not equal to</li>
+      <li><code>&gt;</code> Greater than</li>
+      <li><code>&lt;</code> Less than</li>
+      <li><code>&gt;=</code> Greater than or equal to</li>
+      <li><code>&lt;=</code> Less than or equal to</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>3. Logical Operators</h2>
+    <ul>
+      <li><code>and</code> Returns True if both statements are true</li>
+      <li><code>or</code> Returns True if one statement is true</li>
+      <li><code>not</code> Reverses the result</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>4. Assignment Operators</h2>
+    <ul>
+      <li><code>=</code> Assign value</li>
+      <li><code>+=</code> Add and assign</li>
+      <li><code>-=</code> Subtract and assign</li>
+      <li><code>*=</code> Multiply and assign</li>
+      <li><code>/=</code> Divide and assign</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>5. Membership & Identity Operators</h2>
+    <ul>
+      <li><code>in</code> Checks if value is in a sequence</li>
+      <li><code>not in</code> Checks if value is not in a sequence</li>
+      <li><code>is</code> Checks if two variables point to same object</li>
+      <li><code>is not</code> Checks if they don’t</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>📚 Real-Life Example</h2>
+    <p>Imagine you're building a shopping cart:</p>
+    <code>total += item_price</code> → Adds each item to the total.<br>
+    <code>if total &gt;= 100:</code> → Apply discount.<br>
+    <code>if "apple" in cart:</code> → Check if apple is in the cart.
+  </div>
+
+  <div class="section">
+    <h2>🧪 Interactive Quiz</h2>
+    <div class="quiz" id="quiz">
+      <h3>1. What does <code>x += 3</code> mean?</h3>
+      <label><input type="radio" name="q1" value="0"> x equals 3</label>
+      <label><input type="radio" name="q1" value="1"> x = x + 3</label>
+      <label><input type="radio" name="q1" value="0"> x = 3 + 3</label>
+      <label><input type="radio" name="q1" value="0"> x = 3</label>
+
+      <h3>2. Which operator checks if two variables refer to the same object?</h3>
+      <label><input type="radio" name="q2" value="0"> ==</label>
+      <label><input type="radio" name="q2" value="1"> is</label>
+      <label><input type="radio" name="q2" value="0"> !=</label>
+      <label><input type="radio" name="q2" value="0"> in</label>
+
+      <div class="submit-btn">
+        <button onclick="calculateScore()">Submit Quiz</button>
+      </div>
+      <div class="result" id="result"></div>
+      <div class="submit-btn">
+        <a href="mailto:your@email.com?subject=Python Quiz Results&body=I scored X out of 2 on the Python Operators Quiz!" id="emailLink">Email Results</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function calculateScore() {
+      let score = 0;
+      if (document.querySelector('input[name="q1"]:checked')?.value === "1") score++;
+      if (document.querySelector('input[name="q2"]:checked')?.value === "1") score++;
+      document.getElementById("result").innerText = `You scored ${score} out of 2!`;
+      document.getElementById("emailLink").href = `mailto:your@email.com?subject=Python Quiz Results&body=I scored ${score} out of 2 on the Python Operators Quiz!`;
+    }
+  </script>
+
+  <div class="section">
+    <h2>🔗 More Resources</h2>
+    <div class="link-box">
+      <a href="https://realpython.com/python-operators/" target="_blank">Real Python: Operators</a>
+      <a href="https://www.w3schools.com/python/python_operators.asp" target="_blank">W3Schools: Python Operators</a>
+      <!-- Add more links here -->
+    </div>
+  </div>
+
+</body>
+</html>
